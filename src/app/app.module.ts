@@ -19,6 +19,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipeService } from './recipes/recipe.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { OfficeWorkComponent } from './recipies/office-work/office-work.component';
+import {MaskupDirective} from './recipies/recipies.Directive/maskup.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { OfficeWorkComponent } from './recipies/office-work/office-work.componen
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    OfficeWorkComponent
+    OfficeWorkComponent,
+    MaskupDirective
   ],
   imports: [
     BrowserModule,

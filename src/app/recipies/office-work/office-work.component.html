@@ -48,7 +48,8 @@
                   class="form-control"
                   id="age"
                   #age
-                  (keyup)="onChange(age.value)"
+                  appMaskup
+                  pattern="[0-9]+"
                 >
               </div>
               <div class="col-md-2">

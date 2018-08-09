@@ -1,6 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {FormArray, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
-import {MaskupDirective} from '../recipies.Directive/maskup.directive';
 
 @Component({
   selector: 'app-office-work',
@@ -15,12 +14,15 @@ export class OfficeWorkComponent implements OnInit {
   age = new FormControl('');
   regexStr = '^[1-9]+[0-9]*$';
   ageValue = '';
-  // @HostListener('document:keyup ', ['$event'])
-  // onChange(event: any) {
-  //   let eventVals = event.target.value;
-  //   console.log('pak');
-  // }
-  constructor() { }
+
+  @HostListener('document:keyup ', ['$event'])
+  onChange(event: any) {
+    let eventVals = event.target.value;
+    console.log('pak');
+  }
+
+  constructor() {
+  }
 
   ngOnInit() {
 
@@ -44,14 +46,16 @@ export class OfficeWorkComponent implements OnInit {
           Validators.required,
           Validators.pattern(/^[1-9]+[0-9]*$/),
           Validators.max(5)
-         ])
+        ])
       })
     );
     console.log(this.workGroup);
   }
+
   onSubmit() {
 
   }
+
   delForm(index: number) {
     (<FormArray>this.workGroup.get('profile')).removeAt(index);
   }
